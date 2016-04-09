@@ -1,5 +1,5 @@
 # coding: utf-8
-class CallbackController < ApplicationController
+class LineCallbackController < ApplicationController
   protect_from_forgery except: :create
 
   OP_ADDED_TO_FRIEND = 4
@@ -43,10 +43,11 @@ class CallbackController < ApplicationController
 
   private
   def callbacks
-    params.require(:callback).require(:result)
+    params.require(:line_callback).require(:result)
   end
 
   def contents
+    # TODO: verify callback
     callbacks.map {|e| e["content"] }
   end
 end

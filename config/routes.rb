@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  post "/callbacks" => "callback#create", format: "json"
+  post "/line/callbacks"  => "line_callback#create",  format: "json"
 end
