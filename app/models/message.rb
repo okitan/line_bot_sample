@@ -21,7 +21,21 @@ class Message
       }
     }
 
-    response = client.post("/v1/events", params).must_succeed.body
+    response = client.post("/v1/events", params)
+    unless response.success?
+      puts "-------- 8x [req] x8 --------"
+      puts response.request_line
+      puts response.request_headers
+      puts "\n"
+      puts response.request_body(true)
+      puts "-------- 8x [res] x8 --------"
+      puts response.status_line
+      puts response.response_headers
+      puts "\n"
+      puts response.response_body(true)
+      puts "-------- 8x [end] x8 --------"
+    end
+    response.body
   end
 
   protected
