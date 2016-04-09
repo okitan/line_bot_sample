@@ -42,12 +42,12 @@ class LineCallbackController < ApplicationController
   end
 
   private
-  def callbacks
+  def callback
     params.require(:line_callback).require(:result)
   end
 
   def contents
     # TODO: verify callback
-    callbacks.map {|e| e["content"] }
+    callback.map {|e| e["content"] }
   end
 end
