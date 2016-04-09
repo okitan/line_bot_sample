@@ -55,6 +55,10 @@ class Message
       conn.headers["X-Line-Trusted-User-With-ACL"] = ENV["LINE_MID"]
       conn.headers["Content-Type"]                 = "application/json"
 
+      if ENV["FIXIE_URL"]
+        conn.proxy ENV["FIXIE_URL"]
+      end
+
       conn.adapter :net_http
     end
   end
