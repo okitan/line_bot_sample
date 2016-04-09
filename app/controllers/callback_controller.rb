@@ -1,3 +1,4 @@
+# coding: utf-8
 class CallbackController < ApplicationController
   protect_from_forgery except: :create
 
@@ -24,7 +25,10 @@ class CallbackController < ApplicationController
     case msg["opType"]
     when OP_ADDED_TO_FRIEND
       # TODO: enabled
-      puts "TODO: started taking with channel #{msg["params"]}"
+      text = "どもですー。メモ：#{msg["params"]}"
+
+      # XXX: I don't know why array
+      Message.create(msg["params"], text)
     when OP_BLOCKED
       # TODO: disabled
       puts "TODO: stop taking to channel #{msg["params"]}"
