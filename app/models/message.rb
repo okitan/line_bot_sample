@@ -35,7 +35,7 @@ class Message
       puts response.response_body(true)
       puts "-------- 8x [end] x8 --------"
     end
-    response.body
+    response.must_succeed.body
   end
 
   protected
