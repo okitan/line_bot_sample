@@ -10,6 +10,7 @@ Note:
 ### Variables to be set
 
 | name | value |
+|------|-------|
 | LINE_CHANNEL_ID | your LINE Channel ID |
 | LINE_CHANNEL_SECRET | your LINE Channel Secret |
 | LINE_MID | your bot's MID |
