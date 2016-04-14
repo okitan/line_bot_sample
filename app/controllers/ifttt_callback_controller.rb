@@ -16,6 +16,6 @@ class IftttCallbackController < ApplicationController
 
   private
   def callback
-    params.require(:ifttt_callback).permit(:mid, :message)
+    params.require(:ifttt_callback).permit(:mid, :message, mid: [])
   end
 end
