@@ -4,7 +4,7 @@
 # 2. Set URL https://{YOUR_APP}/ifttt/callbacks
 #    Set Method POST
 #    Set Content-Type application/json
-#    Set Body `{"mid": "{YOUR_MID}"}`
+#    Set Body `{"mid": ["{YOUR_MID}"], "message": "as you like" }`
 # YOUR_MID can be obtained when you add this to the friends
 
 class IftttCallbackController < ApplicationController
