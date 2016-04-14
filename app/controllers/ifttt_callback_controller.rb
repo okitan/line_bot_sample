@@ -11,11 +11,11 @@ class IftttCallbackController < ApplicationController
   protect_from_forgery except: :create
 
   def create
-    Message.create([callback[:mid]], "帰るよー")
+    Message.create([*callback[:mid]], callback[:message])
   end
 
   private
   def callback
-    params.require(:ifttt_callback).permit(:mid)
+    params.require(:ifttt_callback).permit(:mid, :message)
   end
 end
